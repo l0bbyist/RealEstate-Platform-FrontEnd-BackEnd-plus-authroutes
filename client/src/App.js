@@ -20,16 +20,16 @@ function App() {
 
   const checkAuth = () => {
     const token = localStorage.getItem("token") || sessionStorage.getItem("token");
-    console.log("🔍 Checking authentication state, token:", token);
+    console.log("Checking authentication state, token:", token);
     setIsAuthenticated(!!token);
     return !!token; // Return the auth status
   };
 
-  // ✅ Update auth state with token and return status
+  // Update auth state with token and return status
   const handleLogin = (token) => {
     localStorage.setItem("token", token); // Set token directly
     const authenticated = checkAuth(); // Update state and get result
-    console.log("✅ Login handled, isAuthenticated:", authenticated);
+    console.log("Login handled, isAuthenticated:", authenticated);
     return authenticated; // Return for LoginForm to use
   };
 
@@ -38,7 +38,7 @@ function App() {
 
     const checkStorage = setInterval(() => {
       const token = localStorage.getItem("token") || sessionStorage.getItem("token");
-      console.log("🛑 Token in storage:", token);
+      console.log("Token in storage:", token);
       if (!token && isAuthenticated) {
         console.warn("❌ Token removed! Logging out...");
         setIsAuthenticated(false);

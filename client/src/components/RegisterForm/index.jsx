@@ -12,7 +12,7 @@ const RegisterForm = ({ onToggle }) => {
     email: "", 
     password: "", 
     phoneNo: "", // Phone number
-    role: "", // Default role
+    
   });
 
   const [error, setError] = useState(null);

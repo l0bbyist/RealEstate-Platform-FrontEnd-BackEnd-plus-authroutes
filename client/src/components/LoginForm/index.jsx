@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../Input";
 import ButtonSm from "../ButtonSm";
-import { sendRequest } from "../../config/request";  // Assuming sendRequest has the API prefix '/api' already
+import { sendRequest } from "../../config/request";  
 import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = ({ onToggle }) => {
@@ -58,7 +58,7 @@ const LoginForm = ({ onToggle }) => {
         <div>
           <Link to="/">
             <h2 className="mt-6 mb-1 text-center text-3xl font-extrabold text-secondary">
-              Lebanon Real Estate Insights
+               Muungano Properties by Ministry of Lands
             </h2>
             <div className="w-36 h-1.5 bg-gradient-to-r from-primary to-black"></div>
           </Link>
