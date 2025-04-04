@@ -63,7 +63,6 @@ function App() {
         <Route
           path="dashboard/*"
           element={
-            console.log("Dashboard check, isAuthenticated:", isAuthenticated),
             isAuthenticated ? <SideNav /> : <Navigate to="/auth" />
           }
         >

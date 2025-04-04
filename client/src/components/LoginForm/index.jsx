@@ -27,6 +27,7 @@ const LoginForm = ({ onToggle }) => {
       return;
     }
 
+
     try {
       // Send request to the backend login endpoint
       const response = await sendRequest({
@@ -36,7 +37,8 @@ const LoginForm = ({ onToggle }) => {
       });
 
       // Assuming response includes the token and user details
-      const { token, user } = response.data;
+      const { token, user } = response;
+      console.log("Login response:...............", response); // Debugging line
 
       // Store token and user data in local storage
       localStorage.setItem("token", token);

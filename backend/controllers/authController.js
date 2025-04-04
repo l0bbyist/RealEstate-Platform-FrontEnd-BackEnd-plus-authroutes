@@ -29,7 +29,7 @@ const userRegister = async (req, res) => {
 // User Login
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
-
+  console.log("User login attempt with email:", email, password); //Debugging line
   try {
     const user = await User.findOne({ where: { email } });
 
@@ -38,9 +38,11 @@ const userLogin = async (req, res) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password);  // Compare hashed passwords
+    console.log("Password match result:", isMatch); //Debugging line
 
     if (!isMatch) {
       return res.status(400).json({ error: "Invalid credentials" });
+      console.log("Invalid credentials for user:", email); //Debugging line
     }
 
     // Generate JWT token
@@ -50,6 +52,7 @@ const userLogin = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "An error occurred during login" });
+    console.log("Error during user login:", error); //Debugging line
   }
 };
 

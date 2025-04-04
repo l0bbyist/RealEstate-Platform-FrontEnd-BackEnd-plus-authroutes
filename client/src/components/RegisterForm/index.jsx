@@ -11,7 +11,7 @@ const RegisterForm = ({ onToggle }) => {
     nida: "", // National ID
     email: "", 
     password: "", 
-    phoneNo: "", // Phone number
+    phone: "", // Phone number
     
   });
 
@@ -27,7 +27,7 @@ const RegisterForm = ({ onToggle }) => {
     if (!credentials.nida) return setError("NIDA ID is required");
     if (!validateEmail(credentials.email)) return setError("Invalid Email Address");
     if (!validatePassword(credentials.password)) return setError("Password must be at least 8 characters");
-    if (!credentials.phoneNo) return setError("Phone number is required");
+    if (!credentials.phone) return setError("Phone number is required");
     
 
     try {
@@ -60,7 +60,7 @@ const RegisterForm = ({ onToggle }) => {
           <Input label="NIDA ID" placeholder="Enter your NIDA number" value={credentials.nida} onChange={(nida) => setCredentials({ ...credentials, nida })} />
           <Input label="Email" placeholder="Enter your email" type="email" value={credentials.email} onChange={(email) => setCredentials({ ...credentials, email })} />
           <Input label="Password" placeholder="Enter your password" type="password" value={credentials.password} onChange={(password) => setCredentials({ ...credentials, password })} />
-          <Input label="Phone Number" placeholder="Enter your phone number" value={credentials.phoneNo} onChange={(phoneNo) => setCredentials({ ...credentials, phoneNo })} />
+          <Input label="Phone Number" placeholder="Enter your phone number" value={credentials.phone} onChange={(phone) => setCredentials({ ...credentials, phone })} />
           {error && <p className="text-red-500 text-xs">{error}</p>}
           <div className="flex justify-center items-center">
             <ButtonSm onClick={registerHandler} buttonText="Signup" />
