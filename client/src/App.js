@@ -40,7 +40,7 @@ function App() {
       const token = localStorage.getItem("token") || sessionStorage.getItem("token");
       console.log("Token in storage:", token);
       if (!token && isAuthenticated) {
-        console.warn("❌ Token removed! Logging out...");
+        console.warn("Token removed! Logging out...");
         setIsAuthenticated(false);
       }
     }, 10000);
